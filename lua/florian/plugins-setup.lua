@@ -69,6 +69,9 @@ return packer.startup(function(use)
     -- transparent background
     use("xiyaowong/nvim-transparent")
 
+    -- formatting 
+    use("mhartington/formatter.nvim")
+
     if packer_bootstrap then
         require("packer").sync()
     end
