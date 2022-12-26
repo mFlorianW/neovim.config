@@ -41,3 +41,13 @@ keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git 
 keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
+
+-- Move lines in the code.
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Keep cursor in position while moving and searching and searching
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+keymap.set("n", "n", "nzzzv")
+keymap.set("n", "N", "Nzzzv")

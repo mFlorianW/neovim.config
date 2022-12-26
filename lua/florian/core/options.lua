@@ -9,6 +9,7 @@ opt.tabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
+opt.smartindent = true
 
 -- line wrap
 opt.wrap = false
@@ -37,3 +38,5 @@ opt.splitbelow = true
 
 opt.iskeyword:append("-")
 
+-- colorcolumn
+opt.colorcolumn = "120"
