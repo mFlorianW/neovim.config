@@ -21,7 +21,7 @@ vim.opt.completeopt = "menu,menuone,noselect"
 cmp.setup({
     snippet = {
         expand = function(args)
-            lunasnip.lsp_expand(args.body)
+            luasnip.lsp_expand(args.body)
         end,
     },
     mapping = cmp.mapping.preset.insert({
