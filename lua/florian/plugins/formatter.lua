@@ -13,7 +13,7 @@ formatter.setup({
     log_level = vim.log.levels.WARN,
     filetype = {
         cpp = { require('formatter.filetypes.cpp').clangformat },
-        cp = { require('formatter.filetypes.cpp').clangformat },
+        c = { require('formatter.filetypes.c').clangformat },
     },
 })
 
