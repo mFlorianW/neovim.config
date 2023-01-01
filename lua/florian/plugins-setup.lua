@@ -21,7 +21,7 @@ vim.cmd([[
 ]])
 
 local status, packer = pcall(require, "packer")
-if not status then 
+if not status then
     return
 end
 
@@ -56,6 +56,9 @@ return packer.startup(function(use)
     use({ "glepnir/lspsaga.nvim", branch = "main" })
     use("onsails/lspkind.nvim")
 
+    -- clangd plugins
+    use("p00f/clangd_extensions.nvim")
+
     -- treesitter
     use({"nvim-treesitter/nvim-treesitter", run=function() require("nvim-treesitter.install").update({ with_sync = true}) end})
 
@@ -71,6 +74,12 @@ return packer.startup(function(use)
 
     -- formatting 
     use("mhartington/formatter.nvim")
+
+    -- debugger
+    use("mfussenegger/nvim-dap")
+
+    -- cmake integration
+    use("Civitasv/cmake-tools.nvim")
 
     if packer_bootstrap then
         require("packer").sync()

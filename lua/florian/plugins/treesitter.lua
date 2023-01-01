@@ -37,6 +37,7 @@ treesitter.setup({
         "proto",
         "rust",
         "sql",
+        "qmljs"
     },
     auto_install = true
 })
