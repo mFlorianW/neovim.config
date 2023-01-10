@@ -26,11 +26,17 @@ nvimtree.setup({
     actions = {
         open_file = {
             window_picker = {
-                enable = false,
+                enable = true,
             },
         },
     },
     view = {
-        width = 60
+        adaptive_size = true,
+    },
+    filters = {
+        dotfiles = false,
+    },
+    git = {
+        ignore = false,
     },
 })
