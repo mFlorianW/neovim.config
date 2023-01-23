@@ -27,7 +27,9 @@ end
 
 return packer.startup(function(use)
     use("wbthomason/packer.nvim")
-    use("bluz71/vim-nightfly-guicolors")
+    -- use("bluz71/vim-nightfly-guicolors")
+    use('shaunsingh/nord.nvim')
+    -- use('arcticicestudio/nord-vim')
     use("christoomey/vim-tmux-navigator")
     use("szw/vim-maximizer")
     use("tpope/vim-surround")
