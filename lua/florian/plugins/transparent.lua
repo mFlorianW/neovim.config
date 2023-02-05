@@ -7,5 +7,11 @@ transparent.setup({
     enable = true,
     extra_groups = {
         "NvimTreeNormal",
+        "SagaNormal",
+        "SagaBorder",
+        "SagaExpand",
+        "DefinitionBorder",
+        "RenameBorder",
+        "RenameNormal"
     }
 })
