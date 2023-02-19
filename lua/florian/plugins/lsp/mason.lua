@@ -14,10 +14,10 @@ mason_lsp_config.setup({
     ensure_installed = {
         "clangd",
         "neocmake",
-        "sumneko_lua",
+        "lua_ls",
         "sqlls",
         "cmake",
-        "marksman"
+        "marksman",
     },
     -- auto-install configured servers (with lspconfig)
     automatic_installation = true,
