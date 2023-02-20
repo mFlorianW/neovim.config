@@ -55,7 +55,7 @@ return packer.startup(function(use)
     -- configuring lsp server
     use("neovim/nvim-lspconfig")
     use("hrsh7th/cmp-nvim-lsp")
-    use({ "glepnir/lspsaga.nvim", commit = "9b1443017a68213655debd0c0901c22c18bb92a8"})
+    use({ "glepnir/lspsaga.nvim", commit = "5922fc31f0d630d54dd90ef49cbf15d840442d13"})
     use("onsails/lspkind.nvim")
 
     -- clangd plugins

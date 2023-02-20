@@ -6,12 +6,13 @@ end
 transparent.setup({
     enable = true,
     extra_groups = {
+        "FloatBorder",
         "NvimTreeNormal",
         "SagaNormal",
         "SagaBorder",
         "SagaExpand",
         "DefinitionBorder",
         "RenameBorder",
-        "RenameNormal"
+        "RenameNormal",
     }
 })
