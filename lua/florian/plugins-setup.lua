@@ -55,7 +55,8 @@ return packer.startup(function(use)
     -- configuring lsp server
     use("neovim/nvim-lspconfig")
     use("hrsh7th/cmp-nvim-lsp")
-    use({ "glepnir/lspsaga.nvim", commit = "5922fc31f0d630d54dd90ef49cbf15d840442d13"})
+    -- use({ "glepnir/lspsaga.nvim", commit = "5922fc31f0d630d54dd90ef49cbf15d840442d13"})
+    use({ "glepnir/lspsaga.nvim"})
     use("onsails/lspkind.nvim")
 
     -- clangd plugins
@@ -75,7 +76,7 @@ return packer.startup(function(use)
     use("xiyaowong/nvim-transparent")
 
     -- formatting 
-    use("mhartington/formatter.nvim")
+    use({"mhartington/formatter.nvim", commit = "8a4c961330cc4688087f23d18fa7d2f1af9a4902"})
 
     -- debugger
     use("mfussenegger/nvim-dap")
