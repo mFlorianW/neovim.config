@@ -54,3 +54,7 @@ keymap.set("n", "N", "Nzzzv")
 
 -- Easier renaming thanks to theprimeagen
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Swithc between buffer
+keymap.set("n", "<leader>n", "<cmd>bnext<cr>")
+keymap.set("n", "<leader>p", "<cmd>bprevious<cr>")
