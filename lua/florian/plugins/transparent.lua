@@ -4,15 +4,32 @@ if not transparent_setup then
 end
 
 transparent.setup({
-    enable = true,
     extra_groups = {
-        "FloatBorder",
+        -- NvimTree
         "NvimTreeNormal",
+
+        -- LspSaga
+        "FloatBorder",
         "SagaNormal",
         "SagaBorder",
         "SagaExpand",
         "DefinitionBorder",
         "RenameBorder",
         "RenameNormal",
-    }
+
+        -- Bufferline
+        "BufferLineBackground",
+        "BufferLineTabClose",
+        "BufferLineFill",
+        "BufferLineSeparator",
+        "BufferLineIndicatorSelected",
+        "BufferLineCloseButton",
+        "BufferLineInfo",
+        "BufferLineDiagnostic",
+        "BufferLineHint",
+        "BufferLinePick",
+        "BufferLineError",
+        "BufferLineNumbers",
+        "BufferLineTab",
+    },
 })

@@ -84,6 +84,9 @@ return packer.startup(function(use)
     -- cmake integration
     use("Civitasv/cmake-tools.nvim")
 
+    -- topbar 
+    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+
     if packer_bootstrap then
         require("packer").sync()
     end
