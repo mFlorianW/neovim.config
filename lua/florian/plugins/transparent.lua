@@ -62,5 +62,8 @@ transparent.setup({
         "BufferLineDuplicate",
         "BufferLineDuplicateVisible",
         "BufferLineDuplicateSelected",
+        "BufferLineModified",
+        "BufferLineModifiedVisible",
+        "BufferLineModifiedSelected",
     },
 })
