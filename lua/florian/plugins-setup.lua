@@ -87,6 +87,9 @@ return packer.startup(function(use)
     -- topbar 
     use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
+    -- linter
+    use('mfussenegger/nvim-lint')
+
     if packer_bootstrap then
         require("packer").sync()
     end
