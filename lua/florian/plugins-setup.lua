@@ -55,7 +55,7 @@ return packer.startup(function(use)
     -- configuring lsp server
     use("neovim/nvim-lspconfig")
     use("hrsh7th/cmp-nvim-lsp")
-    -- use({ "glepnir/lspsaga.nvim", commit = "5922fc31f0d630d54dd90ef49cbf15d840442d13"})
+    -- use({ "glepnir/lspsaga.nvim", commit = "7722e9728abe47eebe32d13e6c46e3c4e51f9629"})
     use({ "glepnir/lspsaga.nvim"})
     use("onsails/lspkind.nvim")
 
@@ -89,6 +89,9 @@ return packer.startup(function(use)
 
     -- linter
     use('mfussenegger/nvim-lint')
+
+    -- toggle terminal plugin
+    use {"akinsho/toggleterm.nvim", tag = '*'}
 
     if packer_bootstrap then
         require("packer").sync()

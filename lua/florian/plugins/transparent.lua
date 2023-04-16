@@ -5,6 +5,8 @@ end
 
 transparent.setup({
     extra_groups = {
+        -- General
+        "NormalFloat",
         -- NvimTree
         "NvimTreeNormal",
 
