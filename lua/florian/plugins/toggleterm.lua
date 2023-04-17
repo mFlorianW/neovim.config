@@ -5,10 +5,10 @@ if not toggleterm_setup then
 end
 
 toggleterm.setup({
-    open_mapping = "<leader>t",
+    open_mapping = "<leader>tt",
     shade_terminals = false,
     direction = "float",
-    terminal_mappings = false,
+    terminal_mappings = true,
     insert_mappings = false,
 })
 
