@@ -47,4 +47,4 @@ opt.iskeyword:append("-")
 opt.colorcolumn = "120"
 
 -- timeout for commands
-opt.timeoutlen = 200
+opt.timeoutlen = 250
