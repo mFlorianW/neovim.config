@@ -18,6 +18,7 @@ mason_lsp_config.setup({
         "sqlls",
         "cmake",
         "marksman",
+        "pyright",
     },
     -- auto-install configured servers (with lspconfig)
     automatic_installation = true,
