@@ -11,11 +11,6 @@ opt.tabstop = 4
 opt.shiftwidth = 4
 opt.autoindent = true
 
--- api.nvim_create_autocmd(
--- 	{ "BufRead", "BufNewFile" },
--- 	{ pattern = {"*.h","*.hpp","*.hxx"}, command = "set tabstop=2 expandtab shiftwidth=2" }
--- )
-
 -- line wrap
 opt.wrap = false
 
