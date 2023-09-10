@@ -87,6 +87,9 @@ return packer.startup(function(use)
     -- topbar 
     use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
+    -- rust integration
+    use ('simrat39/rust-tools.nvim')
+
     -- linter
     use('mfussenegger/nvim-lint')
 

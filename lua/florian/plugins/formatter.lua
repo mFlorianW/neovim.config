@@ -15,6 +15,14 @@ formatter.setup({
         cpp = { require('formatter.filetypes.cpp').clangformat },
         c = { require('formatter.filetypes.c').clangformat },
         python = { require('formatter.filetypes.python').black },
+        rust = {
+	        function()
+	            return {
+	                exe = "rustfmt",
+	                stdin = true,
+	            }
+	        end,
+        }
     },
 })
 
