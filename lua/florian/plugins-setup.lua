@@ -96,6 +96,12 @@ return packer.startup(function(use)
     -- toggle terminal plugin
     use {"akinsho/toggleterm.nvim", tag = '*'}
 
+    -- cpp tools
+    use {
+        requires = { "nvim-treesitter/nvim-treesitter" },
+        "Badhi/nvim-treesitter-cpp-tools",
+    }
+
     if packer_bootstrap then
         require("packer").sync()
     end
