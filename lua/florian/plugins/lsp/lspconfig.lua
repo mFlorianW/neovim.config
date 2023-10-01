@@ -24,8 +24,8 @@ local keymap = vim.keymap
 rust_tools.setup({
     server = {
         on_attach = function (_, bufnr)
-            vim.keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", {buffer = bufnr}) -- show definition, references
-            vim.keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", {buffer = bufnr}) -- got to declaration
+            vim.keymap.set("n", "gf", "<cmd>Lspsaga finder<CR>", {buffer = bufnr}) -- show definition, references
+            vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", {buffer = bufnr}) -- got to declaration
             vim.keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", {buffer = bufnr}) -- see definition and make edits in window
             vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", {buffer = bufnr}) -- go to implementation
             -- Hover actions
@@ -55,7 +55,7 @@ local on_attach = function(client, bufnr)
     local opts = { noremap = true, silent = true, buffer = bufnr }
 
     -- set keybinds
-    keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts) -- show definition, references
+    keymap.set("n", "gf", "<cmd>Lspsaga finder<CR>", opts) -- show definition, references
     keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- got to declaration
     keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
     keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- go to implementation
