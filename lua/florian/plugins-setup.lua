@@ -102,6 +102,9 @@ return packer.startup(function(use)
         "Badhi/nvim-treesitter-cpp-tools",
     }
 
+    -- indent plugin
+    use { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
+
     if packer_bootstrap then
         require("packer").sync()
     end
