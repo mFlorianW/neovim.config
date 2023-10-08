@@ -33,6 +33,17 @@ nvimtree.setup({
     view = {
         adaptive_size = true,
         side = "right",
+        float = {
+            enable = true,
+            open_win_config = {
+                relative = "editor",
+                border = "rounded",
+                width = 30,
+                height = 30,
+                row = 5,
+                col = 50,
+            }
+        }
     },
     filters = {
         dotfiles = false,
