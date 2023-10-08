@@ -102,6 +102,9 @@ return packer.startup(function(use)
         "Badhi/nvim-treesitter-cpp-tools",
     }
 
+    -- minimap
+    use { "wfxr/minimap.vim" }
+
     -- indent plugin
     use { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
 
