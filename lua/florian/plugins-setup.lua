@@ -108,6 +108,9 @@ return packer.startup(function(use)
     -- indent plugin
     use { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
 
+    -- nvim notify
+    use { "rcarriga/nvim-notify" }
+
     if packer_bootstrap then
         require("packer").sync()
     end
