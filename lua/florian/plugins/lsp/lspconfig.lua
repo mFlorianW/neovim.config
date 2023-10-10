@@ -79,7 +79,8 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 
 lspconfig["clangd"].setup({
     capabilities = capabilities,
-    on_attach = on_attach
+    on_attach = on_attach,
+    cmd = { "clangd", "-j=12", "--header-insertion=never", "--use-dirty-headers", "--clang-tidy=1", "--background-index"}
 })
 
 lspconfig["cmake"].setup({
