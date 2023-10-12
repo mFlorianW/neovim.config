@@ -6,6 +6,7 @@ end
 
 -- Keybindings for cmake
 vim.keymap.set("n", "<C-b>", "<cmd>CMakeBuild<CR>")
+vim.keymap.set("n", "<C-e>", "<cmd>CMakeRun<CR>")
 
 cmake_tools.setup({
     cmake_command = "cmake",
