@@ -80,6 +80,7 @@ return packer.startup(function(use)
 
     -- debugger
     use("mfussenegger/nvim-dap")
+    use{"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
 
     -- cmake integration
     use("Civitasv/cmake-tools.nvim")

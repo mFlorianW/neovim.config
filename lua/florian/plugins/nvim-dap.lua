@@ -4,35 +4,43 @@ if not dap_setup then
     return
 end
 
-dap.adapters.lldb = {
-    type = "executable",
-    command = "/usr/bin/lldb-vscode",
-    name = "lldb"
-}
+local dap_ui_setup, dapui = pcall(require, "dapui")
+if not dap_ui_setup then
+    print("Failed to load plugin DAPUI")
+    return
+end
 
-dap.configurations.cpp = {
-    {
-        name = "Launch",
-        type = "lldb",
-        request = "launch",
-        program = function()
-            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-        end,
-        cwd = '${workspaceFolder}',
-        stopOnEntry = false,
-        args = {},
+dap.adapters.codelldb = {
+    type = "server",
+    port = "${port}",
+    executable = {
+        command = vim.fn.expand("~") .. "/.local/share/nvim/mason/packages/codelldb/codelldb",
+        args = { "--port", "${port}" },
     },
+    name = "codelldb"
 }
 
-dap.configurations.c = dap.configurations.cpp
+dapui.setup({
+
+})
+
+dap.listeners.after.event_initialized["dapui_config"] = function()
+    dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+    dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+    dapui.close()
+end
 
 -- local keymap = vim.keymap
--- keymap.set("n", "<F5>", "lua require'dap'.continue()<CR>", {silent = true})
--- keymap.set("n", "<F10>", "lua require'dap'.step_over()<CR>", {silent = true})
--- keymap.set("n", "<F11>", "lua require'dap'.step_into()<CR>", {silent = true})
--- keymap.set("n", "<F12>", "lua require'dap'.step_out()<CR>", {silent = true})
--- keymap.set("n", "<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", {silent = true})
--- keymap.set("n", "<leader>B", "<cmd>lua require'dap'.toggle_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", {silent = true})
--- keymap.set("n", "<leader>lp", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", {silent = true})
+vim.keymap.set("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>", {silent = true})
+vim.keymap.set("n", "<F10>", "<cmd>lua require'dap'.step_over()<CR>", {silent = true})
+vim.keymap.set("n", "<F11>", "<cmd>lua require'dap'.step_into()<CR>", {silent = true})
+vim.keymap.set("n", "<F12>", "<cmd>lua require'dap'.step_out()<CR>", {silent = true})
+vim.keymap.set("n", "<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", {silent = true})
+vim.keymap.set("n", "<leader>B", "<cmd>lua require'dap'.toggle_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", {silent = true})
+vim.keymap.set("n", "<leader>lp", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", {silent = true})
 --    nnoremap <silent> <Leader>dr <Cmd>lua require'dap'.repl.open()<CR>
 --    nnoremap <silent> <Leader>dl <Cmd>lua require'dap'.run_last()<CR>

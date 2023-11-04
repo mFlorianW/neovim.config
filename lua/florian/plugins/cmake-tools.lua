@@ -14,8 +14,15 @@ cmake_tools.setup({
     cmake_build_directory_prefix = "",
     cmake_generate_options = { "-D", "CMAKE_EXPORT_COMPILE_COMMANDS=1" },
     cmake_build_options = {},
-    cmake_dap_configuration = { name = "cpp", type = "lldb", request = "launch" }, -- dap configuration, optional
-    cmake_soft_link_compile_commands = true,
+    cmake_dap_configuration = { -- debug settings for cmake
+        name = "cpp",
+        type = "codelldb",
+        request = "launch",
+        stopOnEntry = false,
+        runInTerminal = true,
+        console = "integratedTerminal",
+    },
+    cmake_soft_link_compile_commands = false,
     cmake_dap_open_command = require("dap").repl.open, -- optional
     cmake_variants_message = {
         short = { show = true },
