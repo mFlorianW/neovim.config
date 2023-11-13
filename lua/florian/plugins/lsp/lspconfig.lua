@@ -19,6 +19,12 @@ if not rust_tools_setup then
     print("Failed to load rust-tools")
 end
 
+local utils_setup, utils = pcall(require, "florian.plugins.utils")
+if not utils_setup then
+    print("Failed to load utils functions")
+    return
+end
+
 local keymap = vim.keymap
 
 rust_tools.setup({
@@ -124,6 +130,12 @@ lspconfig["lua_ls"].setup({
 --     capabilities = capabilities,
 --     on_attach = on_attach
 -- })
+
+lspconfig["qmlls"].setup({
+    cmd = { utils.qmlls_binary(), string.format("-b %s", utils.cmake_build_dir())},
+    capabilities = capabilities,
+    on_attach = on_attach
+})
 
 
 lspconfig["pyright"].setup({
