@@ -19,6 +19,17 @@ telescope.setup({
             },
         },
     },
+    pickers = {
+        find_files = {
+            previewer = false
+        },
+        buffers = {
+            previewer = false
+        },
+        current_buffer_fuzzy_find = {
+            previewer = false
+        }
+    },
     file_ignore_patterns = {
         "build.*"
     }
