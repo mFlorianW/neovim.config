@@ -16,7 +16,7 @@ local groups = { 'file', 'lnum', 'col', 'severity', 'message', 'code'}
 lint.linters.clazy2 = {
   cmd = 'clazy-standalone',
   stdin = false,
-  args = { string.format("-p %s", utils.cmake_build_dir()), },
+  args = { "-p", string.format("%s", utils.cmake_build_dir()) },
   stream = 'stderr',
   parser = require('lint.parser').from_pattern(pattern, groups, nil, { ['source'] = 'clazy' }),
 }
