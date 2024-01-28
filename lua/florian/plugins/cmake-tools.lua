@@ -24,24 +24,19 @@ cmake_tools.setup({
     },
     cmake_soft_link_compile_commands = false,
     cmake_dap_open_command = require("dap").repl.open, -- optional
-    cmake_variants_message = {
-        short = { show = true },
-        long = { show = true, max_length = 40 }
-    },
-    cmake_executor = {
-        name = "quickfix",
+    cmake_runner = {
+        name = "toggleterm",
         default_opts = {
-            quickfix = {
-                show = "only_on_error", -- "always", "only_on_error"
-                position = "belowright", -- "bottom", "top"
-                size = 15,
+            toggleterm = {
+                direction = "float", -- 'vertical' | 'horizontal' | 'tab' | 'float'
+                close_on_exit = false, -- whether close the terminal when exit
+                auto_scroll = true, -- whether auto scroll to the bottom
             },
         }
     },
     cmake_notifications = {
-        enabled = true, -- show cmake execution progress in nvim-notify
-        spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }, -- icons used for progress display
-        refresh_rate_ms = 100, -- how often to iterate icons
+        runner = { enabled = false }, -- show cmake execution progress in nvim-notify
+        executor = { enabled = false }, -- show cmake execution progress in nvim-notify
     },
     -- make_console_position = "bottom", -- "bottom", "top"
 })
