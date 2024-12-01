@@ -8,12 +8,6 @@ if not cmp_nvim_lsp_status then
     return
 end
 
-local clangd_ext_setup, clangd_ext = pcall(require, "clangd_extensions")
-if not clangd_ext_setup then
-    print("Failed to load clangd_extensions plugin")
-    return
-end
-
 local utils_setup, utils = pcall(require, "florian.plugins.utils")
 if not utils_setup then
     print("Failed to load utils functions")
@@ -43,7 +37,7 @@ local on_attach = function(client, bufnr)
 
     if client.name == "clangd" then
         keymap.set("n", "<F4>", "<cmd>ClangdSwitchSourceHeader<CR>", opts) -- bind F4 to switch between header and source
-        require("clangd_extensions.inlay_hints").set_inlay_hints()
+        vim.lsp.inlay_hint.enable(true)
     end
 end
 

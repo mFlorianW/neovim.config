@@ -4,3 +4,6 @@ if not status then
     return
 end
 
+local api = vim.api
+api.nvim_set_hl(0, "LspInlayHint", { fg = "#4C566A", bg = "NONE", italic = true })
+
