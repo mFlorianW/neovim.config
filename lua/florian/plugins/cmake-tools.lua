@@ -24,6 +24,19 @@ cmake_tools.setup({
     },
     cmake_soft_link_compile_commands = false,
     cmake_dap_open_command = require("dap").repl.open, -- optional
+    cmake_executor ={
+        name = "toggleterm",
+        opts = {},
+        default_opts = {
+            quickfix = {
+                show = "always",
+                position = "horizontal"
+            },
+            toggleterm = {
+                direction = "horizontal", -- 'vertical' | 'horizontal' | 'tab' | 'float'
+            }
+        }
+    },
     cmake_runner = {
         name = "toggleterm",
         default_opts = {
