@@ -39,4 +39,6 @@ cmake_tools.setup({
         executor = { enabled = false }, -- show cmake execution progress in nvim-notify
     },
     -- make_console_position = "bottom", -- "bottom", "top"
+    -- don't display the target
+    cmake_virtual_text_support = false,
 })
