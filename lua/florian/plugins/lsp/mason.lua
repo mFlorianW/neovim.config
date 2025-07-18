@@ -22,4 +22,5 @@ mason_lsp_config.setup({
     },
     -- auto-install configured servers (with lspconfig)
     automatic_installation = true,
+    automatic_enable = false,
 })
