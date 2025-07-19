@@ -102,7 +102,7 @@ lspconfig["lua_ls"].setup({
 -- })
 
 lspconfig["qmlls"].setup({
-    cmd = { utils.qmlls_binary(), string.format("-b %s", utils.cmake_build_dir())},
+    cmd = { utils.qmlls_binary(), string.format("%s", utils.qml_dirs(utils.cmake_build_dir()))},
     capabilities = capabilities,
     on_attach = on_attach
 })

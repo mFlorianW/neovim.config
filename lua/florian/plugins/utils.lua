@@ -27,4 +27,14 @@ function Utils.qmlls_binary()
     end
 end
 
+function Utils.qml_dirs(build_dir)
+    local handle = io.popen(string.format("qmldiscover %s", build_dir))
+    local result = handle:read('*a')
+    local code = handle:close()
+    if not code == 0 then
+        return ""
+    end
+    return result;
+end
+
 return Utils
