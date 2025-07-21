@@ -54,4 +54,7 @@ cmake_tools.setup({
     -- make_console_position = "bottom", -- "bottom", "top"
     -- don't display the target
     cmake_virtual_text_support = false,
+    cmake_compile_commands_options = {
+        action = "none"
+    }
 })
