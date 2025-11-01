@@ -1,8 +1,3 @@
-local lspconfig_status, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status then
-    return
-end
-
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_status then
     return
@@ -37,8 +32,8 @@ local on_attach = function(client, bufnr)
 
     if client.name == "clangd" then
         keymap.set("n", "<F4>", "<cmd>ClangdSwitchSourceHeader<CR>", opts) -- bind F4 to switch between header and source
-        vim.lsp.inlay_hint.enable(true)
     end
+    vim.lsp.inlay_hint.enable(true)
 end
 
 
@@ -53,7 +48,7 @@ vim.g.rustaceanvim = {
     }
 }
 
-lspconfig["clangd"].setup({
+vim.lsp.config("clangd", {
     capabilities = capabilities,
     on_attach = on_attach,
     cmd = { "clangd", "-j=12", "--header-insertion=never", "--use-dirty-headers", "--clang-tidy=1", "--background-index"},
@@ -65,18 +60,18 @@ lspconfig["clangd"].setup({
     end,
 })
 
-lspconfig["cmake"].setup({
+vim.lsp.config("cmake", {
     capabilities = capabilities,
     on_attach = on_attach
 })
 
-lspconfig["marksman"].setup({
+vim.lsp.config("marksman", {
     capabilities = capabilities,
     on_attach = on_attach
 })
 
 -- configure lua server (with special settings)
-lspconfig["lua_ls"].setup({
+vim.lsp.config("lua_ls", {
   capabilities = capabilities,
   on_attach = on_attach,
   settings = { -- custom settings for lua
@@ -101,14 +96,30 @@ lspconfig["lua_ls"].setup({
 --     on_attach = on_attach
 -- })
 
-lspconfig["qmlls"].setup({
+vim.lsp.config("qmlls", {
     cmd = { utils.qmlls_binary(), string.format("%s", utils.qml_dirs(utils.cmake_build_dir()))},
     capabilities = capabilities,
     on_attach = on_attach
 })
 
+vim.lsp.config("slint_lsp", {
+    capabilities = capabilities,
+    on_attach = on_attach
+})
 
-lspconfig["pyright"].setup({
+vim.lsp.config("omnisharp", {
+    capabilities = capabilities,
+    cmd = { "dotnet", vim.fn.stdpath "data" .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+    on_attach = on_attach,
+    settings = {
+        RoslynExtensionsOptions = {
+            EnableAnalyzersSupport = true,
+            EnableImportCompletion = true,
+        }
+    }
+})
+
+vim.lsp.config("pyright", {
     capabilities = capabilities,
     on_attach = on_attach
 })
