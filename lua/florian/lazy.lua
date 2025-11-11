@@ -106,4 +106,10 @@ require("lazy").setup({
 
     -- nvim notify
     { "rcarriga/nvim-notify" },
+
+    -- copilot
+    { "github/copilot.vim" },
+
+    -- copilot chat
+    { "CopilotC-Nvim/CopilotChat.nvim", dependencies = "nvim-lua/plenary.nvim", branch = "main", },
 })
