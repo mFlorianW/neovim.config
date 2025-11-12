@@ -22,7 +22,9 @@ cmake_tools.setup({
         runInTerminal = true,
         console = "integratedTerminal",
     },
-    cmake_soft_link_compile_commands = false,
+    cmake_compile_commands_options = {
+        action = "copy",
+    },
     cmake_dap_open_command = require("dap").repl.open, -- optional
     cmake_executor ={
         name = "toggleterm",
@@ -54,7 +56,4 @@ cmake_tools.setup({
     -- make_console_position = "bottom", -- "bottom", "top"
     -- don't display the target
     cmake_virtual_text_support = false,
-    cmake_compile_commands_options = {
-        action = "none"
-    }
 })
