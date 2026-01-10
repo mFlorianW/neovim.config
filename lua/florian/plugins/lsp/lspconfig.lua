@@ -93,10 +93,11 @@ vim.lsp.config("lua_ls", {
 -- })
 
 vim.lsp.config("qmlls", {
-    cmd = { utils.qmlls_binary(), string.format("%s", utils.qml_dirs(utils.cmake_build_dir()))},
+    cmd = { utils.qmlls_binary() },
     capabilities = capabilities,
     on_attach = on_attach
 })
+vim.lsp.enable("qmlls")
 
 vim.lsp.config("slint_lsp", {
     capabilities = capabilities,
