@@ -94,7 +94,7 @@ require("lazy").setup({
     'mfussenegger/nvim-lint',
 
     -- toggle terminal plugin
-    {"akinsho/toggleterm.nvim", tag = '*'},
+    {"akinsho/toggleterm.nvim", version = '*'},
 
     "Badhi/nvim-treesitter-cpp-tools",
 
