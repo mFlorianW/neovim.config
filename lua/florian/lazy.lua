@@ -46,6 +46,7 @@ require("lazy").setup({
     "nvim-lualine/lualine.nvim",
     {"nvim-telescope/telescope-fzf-native.nvim", build = "make"},
     {"nvim-telescope/telescope.nvim", branch = "0.1.x" },
+    {"nvim-telescope/telescope-ui-select.nvim"},
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",

@@ -21,13 +21,20 @@ telescope.setup({
     },
     pickers = {
         find_files = {
-            previewer = false
+            previewer = true
         },
         buffers = {
-            previewer = false
+            previewer = true
         },
         current_buffer_fuzzy_find = {
             previewer = false
+        }
+    },
+    extensions = {
+        fzf = {},
+        ["ui-select"] = {
+            require("telescope.themes").get_dropdown {
+            }
         }
     },
     file_ignore_patterns = {
@@ -35,3 +42,5 @@ telescope.setup({
     }
 })
 
+telescope.load_extension("fzf")
+telescope.load_extension("ui-select")
