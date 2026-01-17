@@ -23,11 +23,11 @@ cmake_tools.setup({
         console = "integratedTerminal",
     },
     cmake_compile_commands_options = {
-        action = "copy",
+        action = "soft_link",
     },
     cmake_dap_open_command = require("dap").repl.open, -- optional
     cmake_executor ={
-        name = "toggleterm",
+        name = "quickfix",
         opts = {},
         default_opts = {
             quickfix = {
@@ -40,7 +40,7 @@ cmake_tools.setup({
         }
     },
     cmake_runner = {
-        name = "toggleterm",
+        name = "terminal",
         default_opts = {
             toggleterm = {
                 direction = "float", -- 'vertical' | 'horizontal' | 'tab' | 'float'
