@@ -9,6 +9,11 @@ if not utils_setup then
     return
 end
 
+local status, cmake = pcall(require, "cmake-tools")
+if not status then
+    print("Failed to load utils functions")
+end
+
 local keymap = vim.keymap
 
 -- enable keybinds  for available lsp server

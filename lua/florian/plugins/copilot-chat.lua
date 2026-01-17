@@ -3,7 +3,10 @@ if not setup_copilot_chat then
     return
 end
 
-copilot_chat.setup()
+copilot_chat.setup({
+    model = "gpt-5",
+}
+)
 
 local keymap = vim.keymap
 keymap.set("n", "<leader>cc", "<cmd>CopilotChat<CR>") -- Open Copilot Chat
